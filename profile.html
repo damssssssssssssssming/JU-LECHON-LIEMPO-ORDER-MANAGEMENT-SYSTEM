@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+    <link rel="stylesheet" href="dash.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="ghost-btn menu-icon" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="top-icons">
+      <div class="profile-dropdown">
+        <button class="ghost-btn" id="profile-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+          <a href="login.html"><i class="fa-solid fa-door-open"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="dash.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="order.html"><i class="fa-regular fa-drumstick-bite"></i> Orders</a>
+    <a href="status.html"><i class="fa-solid fa-list-check"></i> Order Status</a>
+    <a href="report.html"><i class="fa-solid fa-file-lines"></i> Report</a>
+    <a href="profile.html" class="active"><i class="fa-solid fa-user"></i> Profile</a>
+  </div>
+
+  <!-- Layout -->
+  <div class="layout">
+
+    <div class="content">
+      <div class="content-box profile-box">
+        <h2>My Profile</h2>
+        <p>View and update your account information</p>
+
+        <div class="profile-card">
+          <div class="avatar">
+            <i class="fa-solid fa-user-circle"></i>
+          </div>
+          <div class="profile-info">
+            <p><strong>Username:</strong> johndoe</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Role:</strong> Staff</p>
+            <p><strong>Status:</strong> Active</p>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button class="update-btn">Edit Profile</button>
+          <button class="update-btn">Change Password</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

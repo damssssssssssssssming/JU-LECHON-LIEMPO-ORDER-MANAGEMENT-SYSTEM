@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.create-page {
+  width: 800px;
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.left-side {
+  flex: 1;
+  background-color: #ff8c42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  width: 1px;
+  background: #ddd;
+}
+
+.right-side {
+  flex: 1;
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #ff8c42;
+  font-size: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.input-group input:focus {
+  border-color: #ff8c42;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.btn.primary {
+  background-color: #ff8c42;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #e0661b;
+}
+
+.btn.secondary {
+  background-color: #fff;
+  color: #ff8c42;
+  border: 1px solid #ff8c42;
+}
+
+.btn.secondary:hover {
+  background-color: #ffe5d0;
+}

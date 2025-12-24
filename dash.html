@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <button class="ghost-btn menu-icon" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="top-icons">
+      <div class="profile-dropdown">
+        <button class="ghost-btn" id="profile-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <div class="dropdown-content" id="profile-menu">
+          <a href="profile.html"><i class="fa-solid fa-id-badge"></i> Profile</a>
+          <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+      </div>
+
+      <button class="ghost-btn">
+        <i class="fa-solid fa-house"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="layout" id="layout">
+
+    <div class="sidebar" id="sidebar">
+      <a href="dash.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="order.html"><i class="fa-solid fa-list"></i> Orders</a>
+      <a href="status.html"><i class="fa-solid fa-clock"></i> Pending Orders</a>
+      <a href="report.html"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <h2>Welcome to Dashboard</h2>
+        <p>Manage your orders and track reports</p>
+      </div>
+
+      <div class="summary-cards">
+        <div class="card">
+          <h3>Total Orders Today</h3>
+          <p>25</p>
+        </div>
+        <div class="card">
+          <h3>Pending Orders</h3>
+          <p>7</p>
+        </div>
+        <div class="card">
+          <h3>Completed Orders</h3>
+          <p>18</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <img src="landing.png" alt="Announcement" class="announcement-img">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="dash.js"></script>
+</body>
+</html>

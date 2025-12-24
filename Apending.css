@@ -1,0 +1,47 @@
+.content-box {
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+thead th {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95em;
+}
+
+tbody tr:hover {
+  background: #f9fbff;
+}
+
+.complete-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #28a745;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.complete-btn:hover {
+  background: #1e7e34;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+<body>
+
+<div class="login-page">
+
+  <div class="left-side">
+    <div class="logo-circle">
+      <img src="logo.png" alt="Logo">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="right-side">
+    <div class="login-card">
+      <h1>LOGIN</h1>
+
+      <form action="dash.html" method="post">
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text" placeholder="USERNAME" name="username" required>
+        </div>
+
+        <div class="input-group">
+          <span class="icon"><i class="fa-regular fa-lock"></i></span>
+          <input type="password" placeholder="PASSWORD" name="password" required>
+        </div>
+
+        <a href="forgot.html" class="forgot">FORGOT PASSWORD</a>
+
+        <button type="submit" class="btn primary">LOGIN</button>
+        <a href="create.html" class="btn secondary">CREATE ACCOUNT</a>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

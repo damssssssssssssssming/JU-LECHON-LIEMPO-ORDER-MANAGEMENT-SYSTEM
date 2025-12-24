@@ -1,0 +1,71 @@
+.content-box {
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.page-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 2em;
+  color: #222;
+}
+
+.page-header p {
+  margin-top: 6px;
+  color: #777;
+  font-size: 0.95em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95em;
+  transition: border 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #4f8cff;
+  outline: none;
+}
+
+.update-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #4f8cff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.update-btn:hover {
+  background: #3c7bd9;
+}

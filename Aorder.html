@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Orders</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="adminD.css" />
+  <link rel="stylesheet" href="Aorder.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <button class="ghost-btn menu-icon" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="top-icons">
+      <div class="profile-dropdown">
+        <i class="fa-solid fa-user"></i>
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <a href="adminD.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="Aorder.html"><i class="fa-solid fa-list"></i> Orders</a>
+    <a href="Apending.html"><i class="fa-solid fa-clock"></i> Pending Orders</a>
+    <a href="Acom.html"><i class="fa-solid fa-check"></i> Completed Orders</a>
+    <a href="Ap.html"><i class="fa-solid fa-utensils"></i> Products / Menu</a>
+    <a href="Au.html"><i class="fa-solid fa-users"></i> User Management</a>
+    <a href="Al.html"><i class="fa-solid fa-file-lines"></i> User Logs</a>
+    <a href="As.html"><i class="fa-solid fa-gear"></i> Settings</a>
+  </div>
+  <div class="layout" id="layout">
+    <div class="content">
+      <div class="page-header">
+        <h2>All Orders</h2>
+        <p>Complete list of all customer orders</p>
+      </div>
+
+      <div class="content-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Order Number</th>
+              <th>Date & Time</th>
+              <th>Items Ordered</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <tr>
+              <td>#1001</td>
+              <td>2025-12-20 11:30 AM</td>
+              <td>Lechon Manok, Soft Drink</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><button class="update-btn">View</button></td>
+            </tr>
+            <tr>
+              <td>#1002</td>
+              <td>2025-12-19 12:45 PM</td>
+              <td>Liempo, Bottled Water</td>
+              <td><span class="status completed">Completed</span></td>
+              <td><button class="update-btn">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="Aorder.js"></script>
+</body>
+</html>

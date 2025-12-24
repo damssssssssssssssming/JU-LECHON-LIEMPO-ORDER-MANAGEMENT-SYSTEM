@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order | Menu</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="dash.css" />
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <button class="ghost-btn menu-icon" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="layout">
+
+     <div class="sidebar" id="sidebar">
+      <a href="dash.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="order.html"><i class="fa-solid fa-list"></i> Orders</a>
+      <a href="status.html"><i class="fa-solid fa-clock"></i> Pending Orders</a>
+      <a href="report.html"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+    </div>
+  <div class="menu-header">
+      <h2>Menu</h2>
+      <p>Choose your item and quantity</p>
+    </div>
+    <div class="content-box">
+
+    
+      <!-- MENU GRID -->
+      <div class="menu-grid">
+
+        <!-- 1 -->
+        <div class="menu-card" data-stock="12">
+          <span class="stock-badge">12 left</span>
+          <img src="lechon.jpg" alt="Lechon Manok">
+          <h3>Lechon Manok</h3>
+          <p class="desc">Juicy roasted chicken with special spices</p>
+          <div class="price">₱320</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 2 -->
+        <div class="menu-card" data-stock="5">
+          <span class="stock-badge low">5 left</span>
+          <img src="liempo.jpg" alt="Liempo">
+          <h3>Liempo</h3>
+          <p class="desc">Grilled pork belly, crispy & juicy</p>
+          <div class="price">₱380</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 3 -->
+        <div class="menu-card" data-stock="20">
+          <span class="stock-badge">20 left</span>
+          <img src="chicken-skin.jpg" alt="Chicken Skin">
+          <h3>Chicken Skin</h3>
+          <p class="desc">Crispy deep-fried chicken skin</p>
+          <div class="price">₱120</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 4 -->
+        <div class="menu-card" data-stock="3">
+          <span class="stock-badge low">3 left</span>
+          <img src="isaw.jpg" alt="Isaw">
+          <h3>Isaw</h3>
+          <p class="desc">Classic grilled chicken intestines</p>
+          <div class="price">₱80</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 5 -->
+        <div class="menu-card" data-stock="30">
+          <span class="stock-badge">30 left</span>
+          <img src="cola.jpg" alt="Soft Drink">
+          <h3>Soft Drink</h3>
+          <p class="desc">Refreshing soda drink, 500ml bottle</p>
+          <div class="price">₱40</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 6 -->
+        <div class="menu-card" data-stock="25">
+          <span class="stock-badge">25 left</span>
+          <img src="rice.jpg" alt="Rice">
+          <h3>Steamed Rice</h3>
+          <p class="desc">Perfectly steamed white rice, 1 cup</p>
+          <div class="price">₱35</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 7 -->
+        <div class="menu-card" data-stock="40">
+          <span class="stock-badge">40 left</span>
+          <img src="water.jpg" alt="Bottled Water">
+          <h3>Bottled Water</h3>
+          <p class="desc">Pure mineral water, 500ml bottle</p>
+          <div class="price">₱25</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 8 -->
+        <div class="menu-card" data-stock="10">
+          <span class="stock-badge low">10 left</span>
+          <img src="halo.jpg" alt="Halo Halo">
+          <h3>Halo Halo</h3>
+          <p class="desc">Filipino shaved ice dessert with fruits</p>
+          <div class="price">₱90</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 9 -->
+        <div class="menu-card" data-stock="15">
+          <span class="stock-badge">15 left</span>
+          <img src="sisig.jpg" alt="Sisig">
+          <h3>Sisig</h3>
+          <p class="desc">Sizzling pork sisig with spices</p>
+          <div class="price">₱220</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+        <!-- 10 -->
+        <div class="menu-card" data-stock="8">
+          <span class="stock-badge low">8 left</span>
+          <img src="cue.jpg" alt="Banana Cue">
+          <h3>Banana Cue</h3>
+          <p class="desc">Caramelized fried bananas on stick</p>
+          <div class="price">₱50</div>
+          <div class="qty-box">
+            <button class="qty-btn plusminus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button class="qty-btn plusminus" onclick="changeQty(this,1)">+</button>
+          </div>
+          <button class="order-btn">ADD TO ORDER</button>
+        </div>
+
+      </div>
+    </div><
+  </div><
+
+  <script src="sidebar.js"></script>
+  <script src="order.js"></script>
+
+</body>
+</html>
