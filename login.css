@@ -157,3 +157,14 @@ body {
     transform: translateY(0);
   }
 }
+.warning {
+  display: none;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}

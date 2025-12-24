@@ -25,7 +25,10 @@
     <div class="login-card">
       <h1>LOGIN</h1>
 
-      <form action="dash.html" method="post">
+      <!-- Warning message -->
+      <div id="warning" class="warning"></div>
+
+      <form id="loginForm">
         <div class="input-group">
           <span class="icon"><i class="fa-solid fa-user"></i></span>
           <input type="text" placeholder="USERNAME" name="username" required>
@@ -46,5 +49,6 @@
 
 </div>
 
+<script src="login.js"></script>
 </body>
 </html>
