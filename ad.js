@@ -5,7 +5,6 @@ function toggleSidebar() {
   sidebar.classList.toggle('active');
   layout.classList.toggle('shift');
 }
-
 document.addEventListener('click', function(e){
   const dropdown = document.querySelector('.profile-dropdown');
   if(dropdown && !dropdown.contains(e.target)){
@@ -19,44 +18,69 @@ if(profile){
     profile.classList.toggle('active');
   });
 }
-
 const totalOrdersElem = document.getElementById('totalOrders');
 const pendingOrdersElem = document.getElementById('pendingOrders');
 const completedOrdersElem = document.getElementById('completedOrders');
 
-const dashboardData = {
-  totalOrders: 150,
-  pendingOrders: 45,
-  completedOrders: 105
-};
+if(totalOrdersElem) totalOrdersElem.textContent = parseInt(totalOrdersElem.dataset.value || totalOrdersElem.textContent);
+if(pendingOrdersElem) pendingOrdersElem.textContent = parseInt(pendingOrdersElem.dataset.value || pendingOrdersElem.textContent);
+if(completedOrdersElem) completedOrdersElem.textContent = parseInt(completedOrdersElem.dataset.value || completedOrdersElem.textContent);
 
-if(totalOrdersElem) totalOrdersElem.textContent = dashboardData.totalOrders;
-if(pendingOrdersElem) pendingOrdersElem.textContent = dashboardData.pendingOrders;
-if(completedOrdersElem) completedOrdersElem.textContent = dashboardData.completedOrders;
+const ctx = document.getElementById('ordersChart').getContext('2d');
+const dateRange = document.getElementById('dateRange');
 
-const ctx = document.getElementById('salesChart').getContext('2d');
-
-const salesChart = new Chart(ctx, {
+let ordersChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['8 AM','10 AM','12 PM','2 PM','4 PM','6 PM','8 PM'],
-    datasets:[{
-      label:'Orders Today',
-      data:[20, 35, 50, 40, 60, 45, 30],
-      backgroundColor:'rgba(79,140,255,0.7)',
-      borderColor:'rgba(79,140,255,1)',
-      borderWidth:1,
-      borderRadius:5,
-      barPercentage:0.5,
-      categoryPercentage:0.7
+    labels: [],
+    datasets: [{
+      label: 'Orders',
+      data: [],
+      backgroundColor: [],
+      borderColor: 'rgba(79,140,255,1)',
+      borderWidth: 1,
+      borderRadius: 5,
+      barPercentage: 0.5,
+      categoryPercentage: 0.7
     }]
   },
   options:{
     responsive:true,
-    plugins:{ legend:{ display:false }, tooltip:{ enabled:true } },
+    plugins:{
+      legend:{ display:false },
+      tooltip:{ enabled:true }
+    },
     scales:{
-      y:{ beginAtZero:true, max:70, ticks:{ stepSize:10 } },
+      y:{
+        beginAtZero:true,
+        ticks:{ stepSize:1 }
+      },
       x:{ grid:{ display:false } }
     }
+  }
+});
+
+function fetchChart(days=7){
+  fetch(`fetch_orders_chart.php?days=${days}`)
+    .then(res => res.json())
+    .then(data => {
+      ordersChart.data.labels = data.labels;
+      ordersChart.data.datasets[0].data = data.values;
+      ordersChart.data.datasets[0].backgroundColor = data.values.map(v => {
+        if(v <= 2) return 'red';    
+        if(v <= 5) return 'blue'; 
+        return 'green';             
+      });
+      ordersChart.update();
+    })
+    .catch(err => console.error("Error fetching chart data:", err));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if(dateRange){
+    fetchChart(dateRange.value);
+    dateRange.addEventListener('change', () => fetchChart(dateRange.value));
+  } else {
+    fetchChart(7); 
   }
 });

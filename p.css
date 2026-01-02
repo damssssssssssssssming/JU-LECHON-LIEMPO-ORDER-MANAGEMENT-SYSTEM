@@ -1,0 +1,138 @@
+/* Topbar */
+.topbar {
+  height: 60px;
+  background: #1e1e2f; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Buttons */
+.ghost-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: -260px;
+  width: 260px;
+  height: calc(100vh - 60px);
+  background: #343a40;
+  padding-top: 20px;
+  transition: 0.3s;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  margin: 5px 0;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sidebar a.active {
+  background: #007bff;
+}
+
+/* Layout */
+.layout {
+  margin-top: 60px;
+  margin-left: 0;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.layout.shift {
+  margin-left: 260px;
+}
+
+/* Profile Box */
+.profile-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-box h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.profile-box p {
+  color: #555; 
+}
+
+/* Profile Card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.profile-card .avatar {
+  font-size: 80px;
+  color: #007bff;
+}
+
+.profile-card .profile-info {
+  text-align: left;
+}
+
+.profile-card .profile-info p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #222; 
+}
+
+/* Buttons */
+.update-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 10px 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.update-btn:hover {
+  background: #218838; 
+}

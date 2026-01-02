@@ -41,6 +41,45 @@ document.addEventListener('DOMContentLoaded', function() {
         statusSpan.textContent = 'Available';
         this.textContent = 'Disable';
       }
+
+      const id = row.dataset.id;
+      fetch("toggle_item.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(!data.success){
+          console.warn("Toggle item warning:", data.message);
+        }
+      })
+      .catch(err => console.error("Toggle item error:", err));
+    });
+  });
+
+  const stockButtons = document.querySelectorAll(".stock-btn");
+
+  stockButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest("tr");
+      const id = row.dataset.id;
+      const action = btn.dataset.action;
+
+      fetch("update_stock.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, action })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          row.querySelector(".stock-count").textContent = data.stock;
+        } else {
+          console.warn("Stock update warning:", data.message);
+        }
+      })
+      .catch(err => console.error("Stock update error:", err));
     });
   });
 });

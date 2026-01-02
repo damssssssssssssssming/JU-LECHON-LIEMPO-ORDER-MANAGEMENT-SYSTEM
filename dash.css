@@ -52,3 +52,35 @@ body { font-family:"Segoe UI", Arial, sans-serif; background:var(--light); color
 
 .content-box { background:var(--white); padding:25px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:25px; overflow:hidden; text-align:center; }
 .announcement-img { width:100%; height:auto; border-radius:10px; }
+
+.dashboard-carousel {
+  position: relative;
+  width: 12 00px;
+  height: 900px;
+  margin: 20px 0 20px auto; /* align right */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Each slide */
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Active slide */
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Images inside carousel */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

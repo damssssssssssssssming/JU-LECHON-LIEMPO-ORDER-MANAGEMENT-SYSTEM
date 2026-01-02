@@ -2,12 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const sidebar = document.getElementById('sidebar');
   const layout = document.getElementById('layout');
 
-  function toggleSidebar() {
+  window.toggleSidebar = function() {
     sidebar.classList.toggle('active');
     layout.classList.toggle('shift');
-  }
-
-  window.toggleSidebar = toggleSidebar;
+  };
 
   const profileDropdown = document.querySelector('.profile-dropdown');
   if(profileDropdown){
@@ -22,9 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const profileForm = document.getElementById('profileForm');
-  profileForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Profile updated successfully!');
+  const editBtn = document.getElementById('editProfileBtn');
+  const editForm = document.getElementById('editProfileForm');
+
+  editBtn.addEventListener('click', () => {
+    editForm.classList.toggle('hidden');
+    editForm.classList.toggle('visible');
+
+    if (editForm.classList.contains('visible')) {
+      editBtn.innerHTML = '<i class="fa-solid fa-xmark"></i> Cancel';
+    } else {
+      editBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Edit';
+    }
   });
 });
